@@ -6,7 +6,20 @@
         <title>Oppgave 1</title>
     </head>
     <body>
+        <p>Hei, <span id="utskriftSpan"></span></p>
 
-        
+        <script>
+            const name = "Siina"
+            let utskrift = ""
+            
+            if (name === "Siina") {
+                utskrift = "Mitt navn er Siina"
+            } else {
+                utskrift = "Mitt navn er ikke Siina"
+            }
+
+            document.getElementById("utskriftSpan").innerHTML = utskrift
+
+        </script>
     </body>
 </html>

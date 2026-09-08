@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Oppgave 3</title>
+    </head>
+    <body>
+        <p>Gutter: <span id="gutterSpan"></span></p>
+        <p>Jenter: <span id="jenterSpan"></span></p>
+
+        <script>
+            const barn1 = "gutt"
+            const barn2 = "jente"
+            const barn3 = "jente"
+
+            let antall_jenter = 0
+            let antall_gutter = 0
+            
+            if (barn1 === "gutt") {
+                antall_gutter += 1
+            } else if (barn1 === "jente"){
+                antall_jenter += 1
+            }
+
+             if (barn2 === "gutt") {
+                antall_gutter += 1
+            } else if (barn2 === "jente"){
+                antall_jenter += 1
+            }
+
+             if (barn3 === "gutt") {
+                antall_gutter += 1
+            } else if (barn3 === "jente"){
+                antall_jenter += 1
+            }
+
+            document.getElementById("gutterSpan").innerHTML = antall_gutter
+            document.getElementById("jenterSpan").innerHTML = antall_jenter
+        </script>
+    </body>
+</html>
