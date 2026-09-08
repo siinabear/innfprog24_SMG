@@ -13,6 +13,7 @@
             const password = "passord123"
             let loggedIn = false
 
+
             //IF-TEST SOM SJEKKER OM INNSENDT BRUKERNAVN MATCHER SYSTEMET:
             if(username === "siina") {
                 console.log("Brukernavn er riktig")
@@ -20,10 +21,17 @@
                 console.log("Feil brukernavn")
             }
 
+
             //IF-TEST SOM SJEKKER OM INNSENDT BBRUKERNAVN OG PASSORD ER RIKTIG, OG GJØR KLAR LOGIN:
             if(username === "siina" && password === "passord123"){
                 loggedIn = true
                 console.log(loggedIn)
+            }
+
+
+            // Sjekk om en bruker er logget inn, og oppdaterer grensesnitt hvis den er det:
+            if(loggedIn) {
+                document.getElementById("loginStatus").innerHTML = "Hei, Siina :3"
             }
 
         </script>
