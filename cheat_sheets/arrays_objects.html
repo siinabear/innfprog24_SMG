@@ -35,7 +35,7 @@
                     512
                 ]
 
-                // ARRAY MED BOK ED FLERE FORFATTERE
+                // ARRAY MED BOK MED FLERE FORFATTERE
                 const book2 = [
                     "Silver Eyes",
                     "Scott Cawthon",
@@ -57,6 +57,14 @@
 
                 //PRINT INFO FRA BOOK2 TIL HTML:
                 document.getElementById("book2TitleSpan").innerHTML = book2[0]
+                document.getElementById("book2AuthorSpan").innerHTML = book2[1] + ", " + book2[2]
+                document.getElementById("book2PageCountSpan").innerHTML = book2[3]
+
+                //PRINT INFO FRA BOOK3 TIL HTML:
+                //BOOK3 ER ET OBJECT, VI MÅ DERFOR REFERERE TIL NØKLER I STEDET FOR INDEXER.
+                document.getElementById("book3TitleSpan").innerHTML = book3.title
+                document.getElementById("book3AuthorSpan").innerHTML = book3.author
+                document.getElementById("book3PageCountSpan").innerHTML = book3.pagecount
                 
             </script>
         </body>
