@@ -16,6 +16,14 @@
     <h2>Array etter slettemetoder er kjørt</h2>
     <p id="deleted"></p>
 
+    <h2>Sortering</h2>
+    <p>Sortert A-Å: <span id="sortAZ"></span></p>
+    <p>Sortert Å-A: <span id="sortZA"></span></p>
+    
+    <h2>Sortering av tall</h2>
+    <p>Sortert 0-9: <span id="sort09"></span></p>
+    <p>Sortert 9-0: <span id="sort90"></span></p>
+
     <script>
         const books = [
             "Silver Eyes",
@@ -62,6 +70,7 @@
         //.splice(startindex, number of elements to delete)
         // books.splice(4, 1)
 
+        
         //.indexOf(param): finner det første elementet i arrayen som matcher parameteren element, og returnerer indexen.
         const indexFound = books.indexOf("Lord of the Rings: Return of the King")
         console.log("Index til LOTR-bok: ", indexFound)
@@ -73,8 +82,28 @@
         const bookExists = books.includes("Fourth Wing")
         console.log("Finnes Fourth Wing? ", bookExists)
     
-
         document.getElementById("deleted").innerHTML = books.join(", ")
+
+
+        //SORTERE EN ARRAY FRA A TIL Å:
+        books.sort()
+        document.getElementById("sortAZ").innerHTML = books.join(", ")
+
+        //SORTERE EN ARRAY FRA Å TIL A:
+        books.reverse()
+        document.getElementById("sortZA").innerHTML = books.join(", ")
+
+
+        //SORTERE EN ARRAY MED TALL:
+        const tall = [
+            1, 24, 156, 721, 912, 32, 104, 8, 24, 67, 69, 420, 23, 666
+        ]
+
+        tall.sort(function(a, b) { return a - b })
+        document.getElementById("sort09").innerHTML = tall.join(", ")
+
+        tall.sort(function(a, b) { return b - a })
+        document.getElementById("sort90").innerHTML = tall.join(", ")
 
     </script>
 </body>

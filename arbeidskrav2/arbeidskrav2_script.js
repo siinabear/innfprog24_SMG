@@ -30,3 +30,4 @@ const grades = [
     { letter: "F", score: 1}
 ]
 
+students[2].name // for å referere til "Bob"
