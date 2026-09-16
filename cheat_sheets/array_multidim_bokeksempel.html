@@ -47,7 +47,7 @@
 
         //BRUKER .map FOR Å HENTE ALLE BØKER, OG BYGGE HTML I booksHTML-VARIABELEN
         let booksHTML = ""
-        bokregister.map(b => { booksHTML += `<article style="max-width: 300px; background-color: lightgrey;"><h3>${b.title}</h3><p>${b.author.join(", ")}</p><p>${b.pagecount}</p><p>${b.isbn}</p></article>`})
+        bokregister.map(b => { booksHTML += `<article><h3>${b.title}</h3><p>${b.author.join(", ")}</p><p>${b.pagecount}</p><p>${b.isbn}</p></article>`})
         console.log(booksHTML)
 
         document.getElementById("books").innerHTML = booksHTML

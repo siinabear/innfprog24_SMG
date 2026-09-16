@@ -30,4 +30,26 @@ const grades = [
     { letter: "F", score: 1}
 ]
 
-students[2].name // for å referere til "Bob"
+
+document.getElementById("studentCount").innerHTML = students.length
+
+const ages = students.map(a => a.age)
+
+const averageAge = (ages / students.length) // i feel like im cooking something here ....
+
+console.log(ages)
+
+
+
+//const average = "Gjennomsnittsalderen er " + (age1 + age2 + age3 + age4) / 4;
+
+//let average = ""
+//students.map(s => { average = students.grade / students.length})
+
+//console.log(average)
+
+// students[2].name // for å referere til "Bob"
+
+//how to refer to a html document in .js
+
+//how to point to a key in an object in an array
