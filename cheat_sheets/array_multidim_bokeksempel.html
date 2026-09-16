@@ -11,6 +11,11 @@
     <p>Henter tittel på bok 3: <span id="book3Title"></span></p>
     <p>Henter forfatter 2 på bok 2: <span id="book2Author2"></span></p>
 
+    <h2>Bokregister</h2>
+    <section id="books" style="display: flex; gap: 20px;">
+        <p>Laster inn bøker...</p>
+    </section>
+
     <script>
         const bokregister = [
             {
@@ -26,9 +31,9 @@
                 isbn: 56112297
             },
             {
-                title: "Harry Potter og de vises sten",
-                author: ["JK Rowling"],
-                pagecount: 333,
+                title: "Bibelen",
+                author: ["Jesus Kristus"],
+                pagecount: 666,
                 isbn: 78119994
             }
         ]
@@ -39,6 +44,13 @@
         document.getElementById("book3Title").innerHTML = bokregister[2].title
         // HENTER FORFATTER 2 PÅ BOK 2:
         document.getElementById("book2Author2").innerHTML = bokregister[1].author.join(", ")
+
+        //BRUKER .map FOR Å HENTE ALLE BØKER, OG BYGGE HTML I booksHTML-VARIABELEN
+        let booksHTML = ""
+        bokregister.map(b => { booksHTML += `<article style="max-width: 300px; background-color: lightgrey;"><h3>${b.title}</h3><p>${b.author.join(", ")}</p><p>${b.pagecount}</p><p>${b.isbn}</p></article>`})
+        console.log(booksHTML)
+
+        document.getElementById("books").innerHTML = booksHTML
     </script>
 </body>
 </html>

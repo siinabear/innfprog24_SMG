@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet: Array.map</title>
+</head>
+<body>
+    <h2>Bøker</h2>
+    <ul id="books">
+        <li>Ingen bøker registrert enda.......... O_O</li>
+    </ul>
+
+    <h2>Bøker, konstruert med en HTML-variabler</h2>
+    <ul id="booksHTML">
+        <li>Ingen bøker registrert enda...........</li>
+    </ul>
+
+    <script>
+        const books = ["Fourth Wing", "Silver Eyes", "Bibelen", "Norsk Ordbok", "The History of Yaoi: A look into the Past"]
+        books.sort()
+
+        //VI BRUKER .map SOM LAGRER HVER TITTEL I "book" OG LEGGER DENNE TIL LISTEN MED ID "books":
+        books.map(book => { document.getElementById("books").innerHTML += "<li>" + book + "</li>" })
+
+        //VI BRUKER .map FOR Å BYGGE EN HTML-STRENG I KODEN VÅR, SOM VI SENERE SKRIVER UT:
+        let booksHTML = ""
+        books.map(book => {booksHTML += "<li>" + book + "</li>"})
+        document.getElementById("booksHTML").innerHTML = booksHTML
+
+        
+    </script>
+</body>
+</html>
