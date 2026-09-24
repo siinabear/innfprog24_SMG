@@ -31,25 +31,68 @@ const grades = [
 ]
 
 
+//Antall studenter
 document.getElementById("studentCount").innerHTML = students.length
 
+
+//Gjennomsnittsalder
 const ages = students.map(a => a.age)
 
-const averageAge = (ages / students.length) // i feel like im cooking something here ....
+const averageAge = ages.reduce((sum, num) => sum + num, 0) / students.length 
 
-console.log(ages)
+document.getElementById("averageAge").innerHTML = averageAge
+
+
+//Karakter
+const grade = students.map(a => a.grade)
+
+const count1 = grade.filter(num => num === "1").length
+const count2 = grade.filter(num => num === "2").length
+const count3 = grade.filter(num => num === "3").length
+const count4 = grade.filter(num => num === "4").length
+const count5 = grade.filter(num => num === "5").length
+const count6 = grade.filter(num => num === "6").length
+
+document.getElementById("gradeF").innerHTML = count1
+document.getElementById("gradeE").innerHTML = count2
+document.getElementById("gradeD").innerHTML = count3
+document.getElementById("gradeC").innerHTML = count4
+document.getElementById("gradeB").innerHTML = count5
+document.getElementById("gradeA").innerHTML = count6
+
+// Gjennomsnittskarakter
+const gradeNum = grade.map(Number)
+
+const averageGrade = gradeNum.reduce((sum, num) => sum + num, 0) / students.length
+
+if (averageGrade <= 1.4){
+    document.getElementById("averageGrade").innerHTML = "F"
+} else if (averageGrade <= 2.4){
+    document.getElementById("averageGrade").innerHTML = "E"
+} else if (averageGrade <= 3.4) {
+    document.getElementById("averageGrade").innerHTML = "D"
+} else if (averageGrade <= 4.4){
+    document.getElementById("averageGrade").innerHTML = "C"
+} else if (averageGrade <= 5.4) {
+    document.getElementById("averageGrade").innerHTML = "B"
+} else if (averageGrade >= 5.5) {
+    document.getElementById("averageGrade").innerHTML = "A"
+}
+
+
+//Rett fra videregående
+const vgs = students.map(a => a.age)
+const fraVGS = vgs.filter(num => num === 19).length
+
+document.getElementById("highSchool").innerHTML = fraVGS
+
+
+//Work Experience
+const work = students.map(a => a.workexperience)
+const hasWorked = work.filter(num => num >= 1).length
+
+document.getElementById("workExperience").innerHTML = hasWorked
 
 
 
-//const average = "Gjennomsnittsalderen er " + (age1 + age2 + age3 + age4) / 4;
-
-//let average = ""
-//students.map(s => { average = students.grade / students.length})
-
-//console.log(average)
-
-// students[2].name // for å referere til "Bob"
-
-//how to refer to a html document in .js
-
-//how to point to a key in an object in an array
+// https://gemini.google.com/app/faa908eeb139f406
