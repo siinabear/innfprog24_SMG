@@ -51,7 +51,7 @@ const count2 = grade.filter(num => num === "2").length
 const count3 = grade.filter(num => num === "3").length
 const count4 = grade.filter(num => num === "4").length
 const count5 = grade.filter(num => num === "5").length
-const count6 = grade.filter(num => num === "6").length
+const count6 = grade.filter(num => num === "6").length // kunne sikkert ha brukt noen slags loop her ...
 
 document.getElementById("gradeF").innerHTML = count1
 document.getElementById("gradeE").innerHTML = count2
@@ -66,17 +66,17 @@ const gradeNum = grade.map(Number)
 const averageGrade = gradeNum.reduce((sum, num) => sum + num, 0) / students.length
 
 if (averageGrade <= 1.4){
-    document.getElementById("averageGrade").innerHTML = "F"
+    document.getElementById("averageGrade").innerHTML = grades[5].letter
 } else if (averageGrade <= 2.4){
-    document.getElementById("averageGrade").innerHTML = "E"
+    document.getElementById("averageGrade").innerHTML = grades[4].letter
 } else if (averageGrade <= 3.4) {
-    document.getElementById("averageGrade").innerHTML = "D"
+    document.getElementById("averageGrade").innerHTML = grades[3].letter
 } else if (averageGrade <= 4.4){
-    document.getElementById("averageGrade").innerHTML = "C"
+    document.getElementById("averageGrade").innerHTML = grades[2].letter
 } else if (averageGrade <= 5.4) {
-    document.getElementById("averageGrade").innerHTML = "B"
+    document.getElementById("averageGrade").innerHTML = grades[1].letter
 } else if (averageGrade >= 5.5) {
-    document.getElementById("averageGrade").innerHTML = "A"
+    document.getElementById("averageGrade").innerHTML = grades[0].letter
 }
 
 
