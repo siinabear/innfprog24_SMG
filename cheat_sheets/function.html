@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat sheet for Functions</title>
+</head>
+<body>
+    <p>Hei, <span id="username">ikke-innlogget bruker</span></p>
+    <p>Hei, <span id="parameter-username">ikke-innlogget bruker som parameter</span></p>
+    <p>Hei, <span id="full-parameter-username">ikke innlogget bruker, men utfylt parameter</span></p>
+
+    <script>
+        //HER SKAL VI LAGE VERDENS ENKLESTE FUNKSJON: DEN SKRIVER UT ET NAVN
+        function printName() {
+            document.getElementById("username").innerHTML = "Siina"
+        }
+        printName()
+
+        //LAGE EN FUNKSJON SOM TAR IMOT NAVN SOM EN PARAMETER
+        function printParameterName(name) {
+            document.getElementById("parameter-username").innerHTML = name
+        }
+        printParameterName("Siina M. Guttorm den Fjerde")
+
+        //LAGE EN FUNKSJON MEED STANDARDVERDI FOR EN PARAMETER
+        function printDefaultName(name = "brukernavn") {
+            document.getElementById("full-parameter-username").innerHTML = name
+        }
+        printDefaultName()
+
+        //LAGE EN FUNKSJON SOM OPPRETTER ET NYTT HTML-ELEMENT, OG FYLLER DETTE MED NAVN FRA PARAMTER FØR DET SKRIVES UT TIL HTML:
+        function printElementName(name = "Siina :3", htmltag = "h2") {
+            const element = document.createElement(htmltag)
+            element.innerHTML = name
+            document.body.appendChild(element)
+        }
+        printElementName()
+    </script>
+</body>
+</html>

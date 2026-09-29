@@ -38,7 +38,9 @@ document.getElementById("studentCount").innerHTML = students.length
 //Gjennomsnittsalder
 const ages = students.map(a => a.age)
 
-const averageAge = ages.reduce((sum, num) => sum + num, 0) / students.length //jos en käyttäny reduce oisin varmaan voinu kirjoittaa vain kaikki numerot käsin .. tai lisänny kaikki yhteen jollakin tavalla?
+const averageAge = ages.reduce((sum, num) => sum + num, 0) / students.length 
+//hvis jeg hadde ikke brukt reduce kunne jeg ha sikkert skrev tallene for hånd ... ? 
+//visste ikke helt hvordan man legger alle tallene sammen uten å bruke reduce ... :(
 
 document.getElementById("averageAge").innerHTML = averageAge
 
@@ -46,19 +48,17 @@ document.getElementById("averageAge").innerHTML = averageAge
 //Karakter
 const grade = students.map(a => a.grade)
 
-const count1 = grade.filter(num => num === "1").length
-const count2 = grade.filter(num => num === "2").length
-const count3 = grade.filter(num => num === "3").length
-const count4 = grade.filter(num => num === "4").length
-const count5 = grade.filter(num => num === "5").length
-const count6 = grade.filter(num => num === "6").length // ... ?
+function countGrade(num, gr){
+    const c = grade.filter(n => n === num).length
+    document.getElementById(gr).innerHTML = c
+    }
 
-document.getElementById("gradeF").innerHTML = count1
-document.getElementById("gradeE").innerHTML = count2
-document.getElementById("gradeD").innerHTML = count3
-document.getElementById("gradeC").innerHTML = count4
-document.getElementById("gradeB").innerHTML = count5
-document.getElementById("gradeA").innerHTML = count6
+countGrade("1", "gradeF")
+countGrade("2", "gradeE")
+countGrade("3", "gradeD")
+countGrade("4", "gradeC")
+countGrade("5", "gradeB")
+countGrade("6", "gradeA")
 
 // Gjennomsnittskarakter
 const gradeNum = grade.map(Number)
@@ -96,3 +96,4 @@ document.getElementById("workExperience").innerHTML = hasWorked
 
 
 // https://gemini.google.com/app/faa908eeb139f406
+// https://share.gemini.google/HPUhLPOiq9Ry

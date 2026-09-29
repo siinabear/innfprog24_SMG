@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions, oppgave 1</title>
+</head>
+<body>
+    
+    <script>
+        const people = ["Siina", "Maja", "Marie", "Adrian", "Benjamin", "Helene", "Allie"]
+
+        //SORTERT EN ARRAY ALFABETISK INNI EN FUNKSJON, LAGA P-TAG OG SKSREV DET UT I HTML
+        function printNames(test) {
+            const element = document.createElement("p")
+            element.innerHTML = test.sort()
+            element.innerHTML = test.join(", ")
+            document.body.appendChild(element)
+        }
+        printNames(people)
+    </script>
+</body>
+</html>
