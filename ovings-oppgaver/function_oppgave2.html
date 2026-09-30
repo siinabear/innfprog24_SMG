@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions, oppgave 2</title>
+</head>
+<body>
+    
+    <script>
+        const people = ["Siina", "Maja", "Marie", "Adrian", "Benjamin", "Helene", "Allie"]
+
+        //SORTERT EN ARRAY ALFABETISK INNI EN FUNKSJON, LAGA UL-TAG OG SKSREV DET UT I HTML I LI-Listepunkter
+        function printNames(test) {
+            //sortere array
+            test.sort() 
+            //lage et ul-element
+            const element = document.createElement("ul")
+            //fylle ul-listen med listeelementer med navn
+            test.map(person => {
+                //lage en <li>
+                const li = document.createElement("li")
+                //få navnet i "person"-parameteren inn i <li>
+                li.innerHTML = person
+                //legge <li>-elementet inn i <ul>
+                element.appendChild(li)
+            })
+            //legge <ul>-listen på nettsiden
+            document.body.appendChild(element)
+        }
+
+        printNames(people)
+    </script>
+</body>
+</html>
