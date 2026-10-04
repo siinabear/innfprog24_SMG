@@ -38,11 +38,15 @@ document.getElementById("studentCount").innerHTML = students.length
 //Gjennomsnittsalder
 const ages = students.map(a => a.age)
 
-const averageAge = ages.reduce((sum, num) => sum + num, 0) / students.length 
-//hvis jeg hadde ikke brukt reduce kunne jeg ha sikkert skrev tallene for hånd ... ? 
-//visste ikke helt hvordan man legger alle tallene sammen uten å bruke reduce ... :(
+function average(array) {
+    let sum = 0
 
-document.getElementById("averageAge").innerHTML = averageAge
+    array.map( n => {sum += n})
+
+    return sum / students.length
+}
+
+document.getElementById("averageAge").innerHTML = average(ages)
 
 
 //Karakter
@@ -63,7 +67,7 @@ countGrade("6", "gradeA")
 // Gjennomsnittskarakter
 const gradeNum = grade.map(Number)
 
-const averageGrade = gradeNum.reduce((sum, num) => sum + num, 0) / students.length
+const averageGrade = average(gradeNum)
 
 if (averageGrade <= 1.4){
     document.getElementById("averageGrade").innerHTML = grades[5].letter
@@ -97,3 +101,4 @@ document.getElementById("workExperience").innerHTML = hasWorked
 
 // https://gemini.google.com/app/faa908eeb139f406
 // https://share.gemini.google/HPUhLPOiq9Ry
+// https://share.gemini.google/jt9OveBq0Lyk
