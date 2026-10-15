@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funksjoner oppgave 5</title>
+</head>
+<body>
+    <script>
+        const alfabet = ["0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Æ", "Ø", "Å"]
+
+        function lookup(a) {
+            a = String(a)
+            a = a.toUpperCase()
+            const letterExists = alfabet.includes(a)
+
+            if (letterExists === true) {
+                let number = alfabet.indexOf(a)
+                const para = document.createElement("p")
+                para.innerText = `${a} har plasering ${number} i alfabetet`
+                document.body.appendChild(para)
+            }
+            else {
+                const para = document.createElement("p")
+                para.innerText = `${a} finnes ikke i det norske alfabetet`
+                document.body.appendChild(para)
+            }
+        }
+
+        lookup("y")
+    </script>
+</body>
+</html>

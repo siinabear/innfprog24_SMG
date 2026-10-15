@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brukerinput oppgave 2</title>
+</head>
+<body>
+    <h2>Dagens ord er: <span id="ord"></span></h2>
+    <button id="velgord">Velg ord</button>
+
+    <script>
+        const ordliste = ["Piss", "Tiss", "Shit", "Kautokeino", "Brød", "Hjem", "Ori and the Blind Forest GOTY"]
+
+        document.getElementById("velgord").addEventListener("click", function(event) {
+            let ord = ordliste[Math.floor(Math.random() * ordliste.length)];
+            document.getElementById("ord").innerHTML = ord
+        })
+    </script>
+</body>
+</html>

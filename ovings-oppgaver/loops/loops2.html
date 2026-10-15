@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>løkker oppgave 2</title>
+</head>
+<body>
+    <ul id="nedtelling"></ul>
+    <script>
+        let htmlString = ""
+
+        let teller = 10
+
+        while(teller >= 0) {
+            if (teller === 0){
+            htmlString += `We have taken off!`
+            } else {
+            htmlString += `<li>${teller}</li>` }
+            teller = teller - 1
+        }
+
+        document.getElementById("nedtelling").innerHTML = htmlString
+    </script>
+</body>
+</html>

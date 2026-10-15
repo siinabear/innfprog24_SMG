@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brukerinput oppgave 1</title>
+</head>
+<body>
+    <h2>Dagens ord er: <span id="ord"></span></h2>
+    <form>
+        <input type="text" id="brukerord"/>
+        <button id="sendord">Lagre ord</button>
+    </form>
+
+    <script>
+        document.getElementById("sendord").addEventListener("click", function(event) {
+            event.preventDefault()
+            const dagensOrd = document.getElementById("brukerord").value
+            document.getElementById("ord").innerHTML = dagensOrd
+            document.getElementById("brukerord").value = ""
+            document.getElementById("brukerord").focus()
+        })
+    </script>
+</body>
+</html>

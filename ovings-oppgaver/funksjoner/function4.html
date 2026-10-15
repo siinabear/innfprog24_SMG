@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funksjoner oppgave 4</title>
+    <style>
+        .red {color: red;}
+    </style>
+</head>
+<body>
+    <ul id="result"></ul>
+
+    <script>
+        function calculator(num1 = 0, num2 = 0) {
+            let plus = num1 + num2
+            let minus = num1 - num2
+            let dele = num1 / num2
+            let gange = num1 * num2
+
+            document.getElementById("result").innerHTML = `
+            <li ${plus <0 ? 'class="red"':''}>${num1} + ${num2} = ${plus}</li>
+            <li ${minus <0 ? 'class="red"':''}>${num1} - ${num2} = ${minus}</li>
+            <li ${dele <0 ? 'class="red"':''}>${num1} / ${num2} = ${dele}</li>
+            <li ${gange <0 ? 'class="red"':''}>${num1} * ${num2} = ${gange}</li>`
+        }
+
+        calculator(4, 5)
+    </script>
+</body>
+</html>

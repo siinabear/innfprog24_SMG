@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funksjon oppgave 3</title>
+</head>
+<body>
+    <p id="name"></p>
+    <p id="mail"></p>
+    <p id="age"></p>
+
+    <script>
+        function info(name = "ikke oppgitt", email = "ikke oppgitt", birthyear = "ikke oppgitt"){
+            document.getElementById("name").innerHTML = name
+            document.getElementById("mail").innerHTML = email
+            if (birthyear === "ikke oppgitt") {
+                document.getElementById("age").innerHTML = "Ikke oppgitt"
+            } else { 
+                if (typeof birthyear === "string") {
+                        birthyear = Number(birthyear)
+                        document.getElementById("age").innerHTML = 2026 - birthyear
+                } else {
+                document.getElementById("age").innerHTML = 2026 - birthyear }
+            }
+        }
+        info("siina", "siinamg@hiof.no", "2003")
+
+        //Husk å ha riktig operator! (=== isteden for =)(fordi = setter verdien til det, mens === sammenligner? i think)
+    </script>
+</body>
+</html>

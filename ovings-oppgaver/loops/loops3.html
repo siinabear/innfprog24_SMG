@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>løkker oppgave 3</title>
+</head>
+<body>
+    <ul id="animals"></ul>
+    <script>
+        const dyr = ["Lion", "Cat", "Jaguar", "Puma", "Bear", "Dog", "Eagle", "Cow", "Worm", "Dolphin"]
+
+        let htmlString = ""
+
+        for(let counter = 0; counter < dyr.length; counter++) {
+            htmlString += "<li>" + dyr[counter] + "</li>"
+        }
+
+        document.getElementById("animals").innerHTML = htmlString
+    </script>
+</body>
+</html>
