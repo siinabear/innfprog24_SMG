@@ -6,6 +6,52 @@
     <title>brukerinput oppgave 3</title>
 </head>
 <body>
-    
+    <input type="number" id="tall1"/>
+    <input type="number" id="tall2"/>
+
+    <button id="plus">Plus</button>
+    <button id="minus">Minus</button>
+    <button id="gange">Gange</button>
+    <button id="dele">Dele</button>
+
+    <h2>Resultat: <span id="resultat"></span></h2>
+
+    <script>
+        document.getElementById("plus").addEventListener("click", function(event) {
+            let nr1 = document.getElementById("tall1").value
+            let nr2 = document.getElementById("tall2").value
+            nr1 = Number(nr1)
+            nr2 = Number(nr2)
+
+            document.getElementById("resultat").innerHTML = nr1 + nr2
+        })
+
+        document.getElementById("minus").addEventListener("click", function(event) {
+            let nr1 = document.getElementById("tall1").value
+            let nr2 = document.getElementById("tall2").value
+            nr1 = Number(nr1)
+            nr2 = Number(nr2)
+
+            document.getElementById("resultat").innerHTML = nr1 - nr2
+        })
+
+        document.getElementById("gange").addEventListener("click", function(event) {
+            let nr1 = document.getElementById("tall1").value
+            let nr2 = document.getElementById("tall2").value
+            nr1 = Number(nr1)
+            nr2 = Number(nr2)
+
+            document.getElementById("resultat").innerHTML = nr1 * nr2
+        })
+
+        document.getElementById("dele").addEventListener("click", function(event) {
+            let nr1 = document.getElementById("tall1").value
+            let nr2 = document.getElementById("tall2").value
+            nr1 = Number(nr1)
+            nr2 = Number(nr2)
+
+            document.getElementById("resultat").innerHTML = nr1 / nr2
+        })
+    </script>
 </body>
 </html>

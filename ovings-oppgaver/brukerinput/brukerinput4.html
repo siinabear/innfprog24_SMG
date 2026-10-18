@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brukerinput oppgave 4</title>
+</head>
+<body>
+    <input type="number" id="tall1"/>
+    <select name="operator" id="operator">
+        <option value="plus">Plus</option>
+        <option value="minus">Minus</option>
+        <option value="gange">Gange</option>
+        <option value="dele">Dele</option>
+    </select>
+
+    <input type="number" id="tall2"/>
+
+    <button id="regnut">Regn ut!</button>
+
+    <h2>Resultat: <span id="resultat"></span></h2>
+
+    <script>
+        function utregning(tall1, operator, tall2) {
+            tall1 = document.getElementById("tall1").value
+            tall2 = document.getElementById("tall2").value
+            
+            tall1 = Number(tall1)
+            tall2 = Number(tall2)
+
+            let result = ""
+
+            operator = document.getElementById("operator").value
+
+            if (operator === "plus") {
+                result = tall1 + tall2
+            } else if (operator === "minus") {
+                result = tall1 - tall2
+            } else if (operator === "gange") {
+                result = tall1 * tall2 
+            } else if (operator === "dele") {
+                result = tall1 / tall2
+            }
+
+            document.getElementById("resultat").innerHTML = result
+        }
+
+        document.getElementById("regnut").addEventListener("click", utregning)
+    </script>
+</body>
+</html>

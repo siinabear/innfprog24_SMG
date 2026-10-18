@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oppgave 2 i brukerinput fra pp</title>
+    <style> 
+        * {
+            box-sizing: border-box;
+            padding: 1rem; 
+        }
+
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            min-height:100vh;
+            margin:0;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            background-color: black;
+            width: 600px;
+            height: 600px;
+            margin: auto 0;
+            padding: 3rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+    </style>
+</head>
+<body>
+    <section id="flex">
+        <button id="yellow">Gul</button>
+        <button id="red">Rød</button>
+        <button id="blue">Blå</button>
+    </section>
+
+    <div id="myDiv"></div>
+
+    <script>
+        document.getElementById("yellow").addEventListener("click", function(event){
+            const div = document.getElementById("myDiv")
+
+            div.style.backgroundColor = "yellow"
+        })
+
+        document.getElementById("red").addEventListener("click", function(event){
+            const div = document.getElementById("myDiv")
+
+            div.style.backgroundColor = "red"
+        })
+
+        document.getElementById("blue").addEventListener("click", function(event){
+            const div = document.getElementById("myDiv")
+
+            div.style.backgroundColor = "blue"
+        })
+    </script>
+</body>
+</html>
