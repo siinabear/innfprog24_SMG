@@ -43,7 +43,7 @@ function average(array) {
 
     array.map( n => {sum += n})
 
-    return (sum / students.length).toFixed(2)
+    return (sum / students.length).toFixed(2) // satt inn .toFixed(2) for å runde av til 2 desimaler
 }
 
 document.getElementById("averageAge").innerHTML = average(ages)
