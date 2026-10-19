@@ -43,7 +43,7 @@ function average(array) {
 
     array.map( n => {sum += n})
 
-    return sum / students.length
+    return (sum / students.length).toFixed(2)
 }
 
 document.getElementById("averageAge").innerHTML = average(ages)
