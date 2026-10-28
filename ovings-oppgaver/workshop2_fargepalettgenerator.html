@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workshop 2: Fargepalettgenerator</title>
+
+    <style>
+          *{ box-sizing: border-box; }
+          div{padding:1rem;}
+          button{padding:1rem;}
+          section{display:flex; min-height:20vh;}
+          section, p{display:flex;justify-content: center;}
+          article{flex-grow:1;}
+    </style>
 </head>
 <body>
     <main>
+        <div>
         <h2>Fargepalettgenerator</h2>
         <button id="generer">Generer!</button>
+        </div>
 
         <section>
             <article id="color1">
@@ -33,7 +44,81 @@
     </main>
 
     <script>
-        
+        const hexCodes = "ABCDEF0123456789"
+
+        document.getElementById("generer").addEventListener("click", function(event) {
+
+            let hexCode1 = "#"
+            let hexCode2 = "#"
+            let hexCode3 = "#"
+            let hexCode4 = "#"
+            let hexCode5 = "#"
+            let hexCode6 = "#"
+
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode1 += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color1").style.backgroundColor = hexCode1
+            document.getElementById("hexaCode1").innerHTML = hexCode1
+
+
+
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode2 += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color2").style.backgroundColor = hexCode2
+            document.getElementById("hexaCode2").innerHTML = hexCode2
+
+
+
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode3 += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color3").style.backgroundColor = hexCode3
+            document.getElementById("hexaCode3").innerHTML = hexCode3
+
+
+
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode4 += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color4").style.backgroundColor = hexCode4
+            document.getElementById("hexaCode4").innerHTML = hexCode4
+
+
+
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode5 += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color5").style.backgroundColor = hexCode5
+            document.getElementById("hexaCode5").innerHTML = hexCode5
+
+
+
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode6 += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color6").style.backgroundColor = hexCode6
+            document.getElementById("hexaCode6").innerHTML = hexCode6
+        })
     </script>
 </body>
 </html>
