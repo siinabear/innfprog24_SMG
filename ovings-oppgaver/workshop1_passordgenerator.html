@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 1: Passordgenerator</title>
+</head>
+<body>
+    <main>
+        <h2>Passordgenerator</h2>
+        <p>
+            <label for="length">Hvor langt skal passordet være?</label>
+            <input type="number" id="amount" name="amount" value="8"/>
+        </p>
+
+        <p>Velg hvilke tegn passordet skal bestå av: </p>
+        <button onclick="checkAll()">Velg alle</button>
+        <button onclick ="toggleAll()">Toggle </button>
+        <ul>
+            <li>
+                <label>
+                    <input type="checkbox" id="lowerCase" checked />
+                    Små bokstaver
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" id="upperCase" checked />
+                    Store bokstaver
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" id="numbers" checked />
+                    Tall
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" id="specialChars" />
+                    Spesialtegn
+                </label>
+            </li>
+        </ul>
+
+        <button id="generer">Generer passord</button>
+        <p id="passordutskrift"></p>
+
+    </main>
+
+    <script>
+        let passord = ""
+        
+        const lowerCase = "abcdefghijklmnopqrstuvwxyzæøå"
+        const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ"
+        const numbers = "0123456789"
+        const specialChars = "*!@#$%^&()_+-=~`"
+
+        let tillateTegn = ""
+
+        function checkAll() {
+            document.getElementById("lowerCase").checked = true
+            document.getElementById("upperCase").checked = true
+            document.getElementById("numbers").checked = true
+            document.getElementById("specialChars").checked = true
+        }
+
+        function toggleAll() {
+                document.getElementById("lowerCase").checked = !document.getElementById("lowerCase").checked
+                document.getElementById("upperCase").checked = !document.getElementById("upperCase").checked
+                document.getElementById("numbers").checked = !document.getElementById("numbers").checked
+                document.getElementById("specialChars").checked = !document.getElementById("specialChars").checked
+        }
+
+        document.getElementById("generer").addEventListener("click", function(event){
+            passord = ""
+            tillateTegn = ""
+
+            if (document.getElementById("lowerCase").checked === true) {
+                tillateTegn += lowerCase
+            } else {
+                tillateTegn -= lowerCase
+            }
+
+            document.getElementById("upperCase").checked ? tillateTegn += upperCase : null
+            document.getElementById("numbers").checked ? tillateTegn += numbers : null
+            document.getElementById("specialChars").checked ? tillateTegn += specialChars : null
+
+            const passwordLength = document.getElementById("amount").value
+            
+            for (teller = 0; teller < passwordLength; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * tillateTegn.length)
+
+                passord += tillateTegn[tilfeldigTegn]
+                console.log(tilfeldigTegn)
+
+
+            }
+            document.getElementById("passordutskrift").innerHTML = passord
+
+        })
+    </script>
+</body>
+</html>
