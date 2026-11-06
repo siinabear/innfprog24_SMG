@@ -7,38 +7,54 @@
 
     <style>
           *{ box-sizing: border-box; }
-          div{padding:1rem;}
-          button{padding:1rem;}
+          div{padding:1rem;
+            button{padding:1rem;}}
           section{display:flex; min-height:20vh;}
           section, p{display:flex;justify-content: center;}
           article{flex-grow:1;}
+          .newColor{visibility: hidden;}
     </style>
 </head>
+
 <body>
     <main>
         <div>
-        <h2>Fargepalettgenerator</h2>
-        <button id="generer">Generer!</button>
+            <h2>Fargepalettgenerator</h2>
+
+            <select name="amount" id="amount">
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+            </select>
+
+            <button id="generer">Generer!</button>
         </div>
 
         <section>
             <article id="color1">
                 <p id="hexaCode1"></p>
+                <button class="newColor" id="color1Button">Bytt farge</button>
             </article>
             <article id="color2">
                 <p id="hexaCode2"></p>
+                <button class="newColor" id="color2Button">Bytt farge</button>
             </article>
             <article id="color3">
                 <p id="hexaCode3"></p>
+                <button class="newColor" id="color3Button">Bytt farge</button>
             </article>
             <article id="color4">
                 <p id="hexaCode4"></p>
+                <button class="newColor" id="color4Button">Bytt farge</button>
             </article>
             <article id="color5">
                 <p id="hexaCode5"></p>
+                <button class="newColor" id="color5Button">Bytt farge</button>
             </article>
             <article id="color6">
                 <p id="hexaCode6"></p>
+                <button class="newColor" id="color6Button">Bytt farge</button>
             </article>
         </section>
     </main>
@@ -48,6 +64,9 @@
 
         document.getElementById("generer").addEventListener("click", function(event) {
 
+            let amountColor = document.getElementById("amount").value
+            console.log(amountColor)
+
             let hexCode1 = "#"
             let hexCode2 = "#"
             let hexCode3 = "#"
@@ -55,6 +74,7 @@
             let hexCode5 = "#"
             let hexCode6 = "#"
 
+            if (amountColor === "3") {
             for (teller = 0; teller < 6; teller++) {
                 const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
 
@@ -85,7 +105,7 @@
 
             document.getElementById("color3").style.backgroundColor = hexCode3
             document.getElementById("hexaCode3").innerHTML = hexCode3
-
+            } else if (amountColor === "5") {
 
 
             for (teller = 0; teller < 6; teller++) {
@@ -107,7 +127,7 @@
 
             document.getElementById("color5").style.backgroundColor = hexCode5
             document.getElementById("hexaCode5").innerHTML = hexCode5
-
+            } else if (amountColor)
 
 
             for (teller = 0; teller < 6; teller++) {
@@ -118,6 +138,87 @@
 
             document.getElementById("color6").style.backgroundColor = hexCode6
             document.getElementById("hexaCode6").innerHTML = hexCode6
+
+            // button to change color on only 1 block - i got the for-codebit from W3 schools !!!
+            const changeColorButton = document.querySelectorAll(".newColor")
+            for (let i = 0; i < changeColorButton.length; i++) {
+            changeColorButton[i].style.visibility = "visible";
+            }
+
+        })
+
+        //FUCNTION OF SAID BUTTONS!!!!
+
+        document.getElementById("color1Button").addEventListener("click", function(event){
+            let hexCode = "#"
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color1").style.backgroundColor = hexCode
+            document.getElementById("hexaCode1").innerHTML = hexCode
+        })
+
+        document.getElementById("color2Button").addEventListener("click", function(event){
+            let hexCode = "#"
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color2").style.backgroundColor = hexCode
+            document.getElementById("hexaCode2").innerHTML = hexCode
+        })
+
+        document.getElementById("color3Button").addEventListener("click", function(event){
+            let hexCode = "#"
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color3").style.backgroundColor = hexCode
+            document.getElementById("hexaCode3").innerHTML = hexCode
+        })
+
+        document.getElementById("color4Button").addEventListener("click", function(event){
+            let hexCode = "#"
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color4").style.backgroundColor = hexCode
+            document.getElementById("hexaCode4").innerHTML = hexCode
+        })
+
+        document.getElementById("color5Button").addEventListener("click", function(event){
+            let hexCode = "#"
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color5").style.backgroundColor = hexCode
+            document.getElementById("hexaCode5").innerHTML = hexCode
+        })
+
+        document.getElementById("color6Button").addEventListener("click", function(event){
+            let hexCode = "#"
+            for (teller = 0; teller < 6; teller++) {
+                const tilfeldigTegn = Math.floor(Math.random() * hexCodes.length)
+
+                hexCode += hexCodes[tilfeldigTegn]
+            }
+
+            document.getElementById("color6").style.backgroundColor = hexCode
+            document.getElementById("hexaCode6").innerHTML = hexCode
         })
     </script>
 </body>
